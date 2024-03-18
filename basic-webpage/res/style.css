@@ -1,0 +1,169 @@
+:root {
+    --ketchup: #d41e11;
+    --mustard: #a39108;
+    --bun: #c99117;
+    --black: #333;
+}
+
+body {
+    font-family: lora;
+    height: 200vh;
+    padding: 0;
+    margin: 0;
+    color: var(--black);
+    font-size: clamp(14px, 2vw, 18px);
+    background-color: rgb(245, 255, 245);
+}
+
+/*formatting*/
+.article-max-width {
+    max-width: 60ch;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: var(--ketchup);
+    font-size: 2.4em;
+    line-height: 1.3em;
+    margin-bottom: 1em;
+}
+
+em {
+    font-style: italic;
+}
+
+h2 {
+    font-size: 1.5em;
+    line-height: 1.3em;
+    margin-bottom: 0.3em;
+    margin-top: 1.5em;
+    color: var(--ketchup);
+}
+
+h3 {
+    font-size: 1em;
+    line-height: 1.3em;
+    margin-bottom: 0.6em;
+    margin-top: 1.5em;
+}
+
+.article-max-width p {
+    margin-bottom: 1.3em;
+    margin-top: 0;
+}
+
+.background-strip {
+    position: absolute;
+    background-color: var(--bun);
+    margin: 0 10vw;
+    width: 80vw;
+    height: 1.9em;
+    z-index: -1;
+    border-radius: 50px;
+}
+
+p, a, li {
+    line-height: 1.5em;
+}
+
+a {
+    color: var(--ketchup);
+}
+
+img.article-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+div.pop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    padding: 20px;
+}
+
+div.pop img {
+    align-self: center;
+    justify-self: center;
+}
+
+nav {
+    background-color: var(--ketchup);
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 10px;
+    margin-top: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+
+nav .hamburger {
+    display: none;    
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-item {
+    background: var(--bun);
+    aspect-ratio: 1 / 1;
+    margin: 2px;
+    filter: drop-shadow(16px, 16px, 20px, red);
+}
+
+.grid-item:nth-child(2n) {
+    border-radius: 10000px;
+    background-color: var(--ketchup);
+}
+
+.grid-item.grid-item-0 {
+    grid-column-start: 0;
+    grid-column-end: 2;
+}
+
+@media (max-width: 500px) {
+    nav .hamburger {
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        inset: 0;
+    }
+
+    nav ul li {
+        display: block;
+        font-size: 3em;
+    }
+
+    nav.closed {
+        position: static;
+    }
+
+    nav.closed ul li {
+        display: none;
+        font-size: 1em;
+    }
+
+    nav.closed ul li.hamburger {
+        display: block;
+    }
+}
